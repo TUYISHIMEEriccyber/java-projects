@@ -1,3 +1,5 @@
+import java.util.Random;
+
 public class MergeSort {
     public static void mergeSort(int[] arr, int left, int right) {
         if (left < right) {
@@ -44,7 +46,11 @@ public class MergeSort {
     }
 
     public static void main(String[] args) {
-        int[] arr = {38, 27, 43, 3, 9, 82, 10};
+        int[] arr = new int[1000000]; // Array size
+        Random random = new Random();
+        for (int i = 0; i < arr.length; i++) {
+            arr[i] = random.nextInt(1000000); // Random numbers between 0 and 99
+        }
         System.out.println("Original array: " + java.util.Arrays.toString(arr));
         mergeSort(arr, 0, arr.length - 1);
         System.out.println("Sorted array: " + java.util.Arrays.toString(arr));
