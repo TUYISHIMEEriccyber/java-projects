@@ -1,3 +1,4 @@
+import java.util.Random;
 
 public class InsertionSort {
     public static void insertionSort(int[] arr) {
@@ -14,7 +15,11 @@ public class InsertionSort {
     }
 
     public static void main(String[] args) {
-        int[] arr = {12, 11, 13, 5, 6};
+        int[] arr = new int[10]; // Array size
+        Random random = new Random();
+        for (int i = 0; i < arr.length; i++) {
+            arr[i] = random.nextInt(100); // Random numbers between 0 and 99
+        }
         System.out.println("Original array: " + java.util.Arrays.toString(arr));
         insertionSort(arr);
         System.out.println("Sorted array: " + java.util.Arrays.toString(arr));
