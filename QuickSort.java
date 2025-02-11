@@ -1,3 +1,4 @@
+import java.util.Random;
 
 public class QuickSort {
     public static void quickSort(int[] arr, int low, int high) {
@@ -28,7 +29,11 @@ public class QuickSort {
     }
 
     public static void main(String[] args) {
-        int[] arr = {10, 7, 8, 9, 1, 5};
+        int[] arr = new int[1000000]; // Array size
+        Random random = new Random();
+        for (int i = 0; i < arr.length; i++) {
+            arr[i] = random.nextInt(100); // Random numbers between 0 and 99
+        }
         System.out.println("Original array: " + java.util.Arrays.toString(arr));
         quickSort(arr, 0, arr.length - 1);
         System.out.println("Sorted array: " + java.util.Arrays.toString(arr));
